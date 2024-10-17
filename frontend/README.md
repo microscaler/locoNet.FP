@@ -1,60 +1,42 @@
-# frontend
+# SaaS Frontend
 
-A new Flutter project.
+## Batteries included
 
-## Getting Started
+- [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript
+- [Rsbuild](https://rsbuild.dev/): A Rust-based web build tool
+- [Biome](https://biomejs.dev/): A Rust-based formatter and sensible linter for the web
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces
 
-This project is a starting point for a Flutter application.
+If you don't like React for some reason, Rsbuild makes it easy to replace it with something else!
 
-A few resources to get you started if this is your first Flutter project:
+# Development
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To get started with the development of the SaaS frontend, follow these steps:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1. Install Packages
 
-## Using Rust Inside Flutter
+Use the following command to install the required packages using pnpm:
 
-This project leverages Flutter for GUI and Rust for the backend logic,
-utilizing the capabilities of the
-[Rinf](https://pub.dev/packages/rinf) framework.
-
-To run and build this app, you need to have
-[Flutter SDK](https://docs.flutter.dev/get-started/install)
-and [Rust toolchain](https://www.rust-lang.org/tools/install)
-installed on your system.
-You can check that your system is ready with the commands below.
-Note that all the Flutter subcomponents should be installed.
-
-```bash
-rustc --version
-flutter doctor
+```sh
+pnpm install
 ```
 
-You also need to have the CLI tool for Rinf ready.
+### 2. Run in Development Mode
 
-```bash
-cargo install rinf
+Once the packages are installed, run your frontend application in development mode with the following command:
+
+```sh
+pnpm dev
 ```
 
-Messages sent between Dart and Rust are implemented using Protobuf.
-If you have newly cloned the project repository
-or made changes to the `.proto` files in the `./messages` directory,
-run the following command:
+This will start the development frontend server serving via vit
 
-```bash
-rinf message
+### 3. Build The application
+
+To build your application run the following command:
+
+```sh
+pnpm build
 ```
 
-Now you can run and build this app just like any other Flutter projects.
-
-```bash
-flutter run
-```
-
-For detailed instructions on writing Rust and Flutter together,
-please refer to Rinf's [documentation](https://rinf.cunarist.com).
-
-
+After the build `dist` folder is ready to served by loco. run loco `cargo loco start` and the frontend application will served via Loco
